@@ -27,7 +27,7 @@ print(f"Authenticated Project: {project_id}")
 def load_credentials():
     """Load and return credentials using the client secret file."""
     scopes = ["https://www.googleapis.com/auth/cloud-platform"]
-    credentials_path = r'C:\Users\kylen\Desktop\AI\client_secret.json'  # Update path as needed
+    credentials_path = r'PATH_TO_YOUR_SECRET'  # Update path as needed
 
     # Initiate OAuth flow using client secrets
     flow = InstalledAppFlow.from_client_secrets_file(
@@ -118,7 +118,7 @@ writing_b64 = image_to_base64(r"C:\Users\kylen\Desktop\AI\AI_pictures\writing.pn
 
 # ========== 3) Model Setup for Google Generative AI ==========
 # Replace the API key with a placeholder for security
-genai.configure(api_key="YOUR API KEY HERE")  
+genai.configure(api_key="YOUR_API_KEY_HERE")  
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 def generate_ai_content(prompt):
@@ -152,7 +152,7 @@ def send_image_to_gemini(image):
     Sends a base64-encoded image to the Gemini model using the 'generateContent' endpoint.
     """
     # Replace the API key placeholder
-    api_key = "YOUR API KEY HERE"
+    api_key = "YOUR_API_KEY_HERE"
     
     # Encode image to base64
     _, img_encoded = cv2.imencode('.jpg', image)
